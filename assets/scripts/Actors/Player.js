@@ -104,7 +104,7 @@ cc.Class({
 
     attackOnTarget (atkDir, targetPos) {
         var self = this;
-        let deg = cc.misc.radiansToDegrees( cc.v2(0, 1).signAngle(atkDir) );
+        let deg = cc.radiansToDegrees( cc.v2(0, 1).signAngle(atkDir) );
         let angleDivider = [0, 12, 35, 56, 79, 101, 124, 146, 168, 180];
         let slashPos = null;
         function getAtkSF(mag, sfAtkDirs) {
@@ -217,7 +217,7 @@ cc.Class({
         if (this.inputEnabled && this.moveToPos && this.isTouchHold()) {
             let dir = this.moveToPos.sub(this.node.position);
             let rad = Math.atan2(dir.y, dir.x);
-            let deg = cc.misc.radiansToDegrees(rad);
+            let deg = cc.radiansToDegrees(rad);
             this.spArrow.rotation = 90-deg;
             this.node.emit('update-dir', {
                 dir: dir.normalize()
