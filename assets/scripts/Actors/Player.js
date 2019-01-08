@@ -56,7 +56,8 @@ cc.Class({
                 var touchLoc = touch.getLocation();
                 self.spArrow.active = true;
                 self.moveToPos = self.node.parent.convertToNodeSpaceAR(touchLoc);
-                if (self.touchBeganLoc.sub(touchLoc).mag() > self.touchMoveThreshold) {
+              
+                if (cc.pSub(self.touchBeganLoc, touchLoc).mag() > self.touchMoveThreshold) {
                     self.hasMoved = true;
                 }
             },
